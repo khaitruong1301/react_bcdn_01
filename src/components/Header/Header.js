@@ -30,7 +30,15 @@ export default function Header(props) {
                         <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hooks</a>
                         <div className="dropdown-menu" aria-labelledby="dropdownId">
                             <NavLink className="dropdown-item" to="/usestate">useState</NavLink>
-                           
+                            <NavLink className="dropdown-item" to="/useeffect">UseEffect</NavLink>
+                            <NavLink className="dropdown-item" to="/hookredux">hook redux</NavLink>
+                        </div>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Api</a>
+                        <div className="dropdown-menu" aria-labelledby="dropdownId">
+                            <NavLink className="dropdown-item" to="/classapi">class Api</NavLink>
+                            <NavLink className="dropdown-item" to="/funcapi">Function Api</NavLink>
                         </div>
                     </li>
                 </ul>

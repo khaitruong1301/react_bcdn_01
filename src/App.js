@@ -8,6 +8,10 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Header from './components/Header/Header';
 import UseStateDemo from './pages/Hooks/UseStateDemo/UseStateDemo';
+import UseEffectDemo from './pages/Hooks/UseEffectDemo/UseEffectDemo';
+import ClassApi from './pages/ApiDemo/ClassApi';
+import FuncApi from './pages/ApiDemo/FuncApi';
+import DemoFakeBook from './pages/Hooks/HookRedux/DemoFakeBook';
 
 
 function App() {
@@ -23,6 +27,13 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route exact path="/usestate" component={UseStateDemo} />
+        <Route exact path="/useeffect" component={UseEffectDemo} />
+
+        <Route exact path="/classapi" component={ClassApi} />
+
+        <Route exact path="/funcapi" component={FuncApi} />
+        
+        <Route exact path="/hookredux" component={DemoFakeBook} />
 
 
         <Route exact path="/" component={Home} />
