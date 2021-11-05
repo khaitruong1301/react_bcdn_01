@@ -32,6 +32,7 @@ export default function Header(props) {
                             <NavLink className="dropdown-item" to="/usestate">useState</NavLink>
                             <NavLink className="dropdown-item" to="/useeffect">UseEffect</NavLink>
                             <NavLink className="dropdown-item" to="/hookredux">hook redux</NavLink>
+                            <NavLink className="dropdown-item" to="/formreact">hook form</NavLink>
                         </div>
                     </li>
                     <li className="nav-item dropdown">
@@ -39,6 +40,7 @@ export default function Header(props) {
                         <div className="dropdown-menu" aria-labelledby="dropdownId">
                             <NavLink className="dropdown-item" to="/classapi">class Api</NavLink>
                             <NavLink className="dropdown-item" to="/funcapi">Function Api</NavLink>
+                            <NavLink className="dropdown-item" to="/reduxmiddleware">Redux middle ware</NavLink>
                         </div>
                     </li>
                 </ul>

@@ -12,6 +12,8 @@ import UseEffectDemo from './pages/Hooks/UseEffectDemo/UseEffectDemo';
 import ClassApi from './pages/ApiDemo/ClassApi';
 import FuncApi from './pages/ApiDemo/FuncApi';
 import DemoFakeBook from './pages/Hooks/HookRedux/DemoFakeBook';
+import ReduxMiddleWare from './pages/ApiDemo/ReduxMiddleWare';
+import FormReact from './pages/FormReact/FormReact';
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
         <Route exact path="/funcapi" component={FuncApi} />
         
         <Route exact path="/hookredux" component={DemoFakeBook} />
+        <Route exact path="/reduxmiddleware" component={ReduxMiddleWare} />
+        <Route exact path="/formreact" component={FormReact} />
 
 
         <Route exact path="/" component={Home} />

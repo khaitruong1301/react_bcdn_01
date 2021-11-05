@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useSelector,useDispatch } from 'react-redux';
+import { getAllUserAction } from '../../redux/actions/QuanLyNguoiDungActions';
 export default function FuncApi(props) {
 
-    const [mangNguoiDung, setMangNguoiDung] = useState([]);
+    const {mangNguoiDung} = useSelector(rootReducer => rootReducer.QuanLyNguoiDungReducer)
+    const  dispatch = useDispatch();
+    // const [mangNguoiDung, setMangNguoiDung] = useState([]);
     useEffect(async () => {
-        try {
-            let result = await axios({
-                url: 'http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01',
-                method: 'GET'
-            });
+        // try {
+            // let result = await axios({
+            //     url: 'http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01',
+            //     method: 'GET'
+            // });
 
-            setMangNguoiDung(result.data.content);
+            // setMangNguoiDung(result.data.content);
+            let action = getAllUserAction;
+            dispatch(action);
 
-        } catch (errors) {
-            console.log(errors);
-        }
+        // } catch (errors) {
+        //     console.log(errors);
+        // }
 
     }, [])
     const renderNguoiDung = () => {
