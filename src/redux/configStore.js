@@ -4,11 +4,13 @@ import { QuanLyNguoiDungReducer } from './reducers/QuanLyNguoiDungReducer';
 
 //Cấu hình middleware
 import reduxThunk  from 'redux-thunk'
+import {FilmReducer} from './reducers/FilmReducer';
 
 const rootReducer = combineReducers({
     //Nơi kháo các state của ứng dụng
     FakeBookReducer,
-    QuanLyNguoiDungReducer:QuanLyNguoiDungReducer
+    QuanLyNguoiDungReducer:QuanLyNguoiDungReducer,
+    FilmReducer
 });
 
 export const store = createStore(rootReducer,applyMiddleware(reduxThunk));

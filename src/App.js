@@ -14,6 +14,7 @@ import FuncApi from './pages/ApiDemo/FuncApi';
 import DemoFakeBook from './pages/Hooks/HookRedux/DemoFakeBook';
 import ReduxMiddleWare from './pages/ApiDemo/ReduxMiddleWare';
 import FormReact from './pages/FormReact/FormReact';
+import Detail from './pages/Detail/Detail';
 
 
 function App() {
@@ -30,16 +31,15 @@ function App() {
         <Route path="/register" component={Register} />
         <Route exact path="/usestate" component={UseStateDemo} />
         <Route exact path="/useeffect" component={UseEffectDemo} />
-
         <Route exact path="/classapi" component={ClassApi} />
-
         <Route exact path="/funcapi" component={FuncApi} />
-        
         <Route exact path="/hookredux" component={DemoFakeBook} />
         <Route exact path="/reduxmiddleware" component={ReduxMiddleWare} />
         <Route exact path="/formreact" component={FormReact} />
 
+        <Route exact path="/detail/:id" component={Detail} />
 
+        {/* <Detail /> */}
         <Route exact path="/" component={Home} />
       </Switch>
 
