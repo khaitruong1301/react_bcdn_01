@@ -4,8 +4,7 @@ import { NavLink } from 'react-router-dom';
 import CarouselHome from '../../components/CarouselHome/CarouselHome';
 import { layDanhSachPhimAction } from '../../redux/actions/FilmActions';
 
-
-export default function Home(props) {
+export default function Home_Mobile(props) {
     //Lấy thông tin mangPhim từ FilmReducer về component
     const mangPhim = useSelector(rootReducer => rootReducer.FilmReducer.mangPhim);
 
@@ -22,12 +21,14 @@ export default function Home(props) {
 
     const renderPhim = () => {
         return mangPhim.map((phim, index) => {
-            return <div className="col-4 mt-2" key={index}>
-                <div className="card">
-                    <img src={phim.hinhAnh} alt='...' height={300} />
-                    <div className="card-body">
-                        <p style={{height:50}}>{phim.tenPhim}</p>
-                        <p style={{height:75}}>{phim.moTa.length>100 ? phim.moTa.substr(0,100) +' ...' : phim.moTa}</p>
+            return <div className="row mt-2" key={index}>
+                <div className="col-4">
+                    <img className="w-100" height="" src={phim.hinhAnh} alt='...' />
+                </div>
+                <div className="col-8">
+                    <p>{phim.tenPhim}</p>
+                    <p>{phim.moTa}</p>
+                    <div class="text-right">
                         <NavLink to={`/detail/${phim.maPhim}`} className="btn btn-success">Xem chi tiết</NavLink>
                     </div>
                 </div>
@@ -38,9 +39,7 @@ export default function Home(props) {
         <div className="container">
             <CarouselHome />
             <h1>Danh sách phim</h1>
-            <div className="row">
-                {renderPhim()}
-            </div>
+            {renderPhim()}
         </div>
     )
 }

@@ -20,6 +20,9 @@ import HomeTemplate from './templates/HomeTemplate/HomeTemplate';
 import UserTemplate from './templates/UserTemplate/UserTemplate';
 import AdminTemplate from './templates/AdminTemplate/AdminTemplate';
 import AdminPage from './pages/_AdminPage/AdminPage';
+import Home_Mobile from './pages/Home/Home_Mobile';
+import DemoHOC from './pages/HOC/DemoHOC';
+import DrawerForm from './components/DrawerForm/DrawerForm';
 function App() {
   return (
     <BrowserRouter>
@@ -54,11 +57,14 @@ function App() {
         <HomeTemplate exact path="/formreact" component={FormReact} />
 
         <HomeTemplate exact path="/detail/:id" component={Detail} />
+        <HomeTemplate exact path="/demohoc" component={DemoHOC}  />
 
         {/* <Detail /> */}
-        <HomeTemplate exact path="/" component={Home} />
+        <HomeTemplate exact path="/" component={Home} mobileComponent={Home_Mobile} />
+        
+     
       </Switch>
-
+      <DrawerForm />
 
       {/* 
         <Route path="/home" render={(propsRoute)=> {
