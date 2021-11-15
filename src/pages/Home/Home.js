@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom';
+import CarouselHome from '../../components/CarouselHome/CarouselHome';
 import { layDanhSachPhimAction } from '../../redux/actions/FilmActions';
 
 
@@ -35,6 +36,7 @@ export default function Home(props) {
     }
     return (
         <div className="container">
+            <CarouselHome />
             <h1>Danh sách phim</h1>
             <div className="row">
                 {renderPhim()}

@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
@@ -15,36 +15,52 @@ import DemoFakeBook from './pages/Hooks/HookRedux/DemoFakeBook';
 import ReduxMiddleWare from './pages/ApiDemo/ReduxMiddleWare';
 import FormReact from './pages/FormReact/FormReact';
 import Detail from './pages/Detail/Detail';
-
-
+import { Component, Fragment } from 'react';
+import HomeTemplate from './templates/HomeTemplate/HomeTemplate';
+import UserTemplate from './templates/UserTemplate/UserTemplate';
+import AdminTemplate from './templates/AdminTemplate/AdminTemplate';
+import AdminPage from './pages/_AdminPage/AdminPage';
 function App() {
   return (
-      <BrowserRouter>
-      <Header />
-      
+    <BrowserRouter>
       <Switch>
-        <Route exact path="/home" component={Home} />
-        {/* <Route exact path="/trangchu" component={Home} /> */}
-        <Route exact path="/about" component={About} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route exact path="/usestate" component={UseStateDemo} />
-        <Route exact path="/useeffect" component={UseEffectDemo} />
-        <Route exact path="/classapi" component={ClassApi} />
-        <Route exact path="/funcapi" component={FuncApi} />
-        <Route exact path="/hookredux" component={DemoFakeBook} />
-        <Route exact path="/reduxmiddleware" component={ReduxMiddleWare} />
-        <Route exact path="/formreact" component={FormReact} />
+        <AdminTemplate path="/admin/index" component={AdminPage} />
 
-        <Route exact path="/detail/:id" component={Detail} />
+        <HomeTemplate path="/home" component={Home} />
+        <HomeTemplate path="/about" component={About} />
+        {/* <Route exact path="/home" render={(propsRoute) => {
+          return <Fragment>
+            <Header />
+            <Home {...propsRoute} />
+          </Fragment>
+        }} /> */}
+        {/* <Route exact path="/trangchu" component={Home} /> */}
+        {/* <Route exact path="/about" render={(propsRoute) => {
+
+          return <Fragment>
+            <Header />
+            <About {...propsRoute} />
+          </Fragment>
+        }} /> */}
+        <HomeTemplate exact path="/contact" component={Contact} />
+        <UserTemplate exact path="/login" component={Login} />
+        <UserTemplate path="/register" component={Register} />
+        <HomeTemplate exact path="/usestate" component={UseStateDemo} />
+        <HomeTemplate exact path="/useeffect" component={UseEffectDemo} />
+        <HomeTemplate exact path="/classapi" component={ClassApi} />
+        <HomeTemplate exact path="/funcapi" component={FuncApi} />
+        <HomeTemplate exact path="/hookredux" component={DemoFakeBook} />
+        <HomeTemplate exact path="/reduxmiddleware" component={ReduxMiddleWare} />
+        <HomeTemplate exact path="/formreact" component={FormReact} />
+
+        <HomeTemplate exact path="/detail/:id" component={Detail} />
 
         {/* <Detail /> */}
-        <Route exact path="/" component={Home} />
+        <HomeTemplate exact path="/" component={Home} />
       </Switch>
 
 
-        {/* 
+      {/* 
         <Route path="/home" render={(propsRoute)=> {
 
           return <div>
@@ -54,9 +70,9 @@ function App() {
 
         }} /> */}
 
-      
-      
-      </BrowserRouter>
+
+
+    </BrowserRouter>
   );
 }
 
